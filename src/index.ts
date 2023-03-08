@@ -101,7 +101,6 @@ export class Wallet {
         const script = v.witnessUtxo?.script || v.nonWitnessUtxo;
         if (script) {
           const address = bitcoin.address.fromOutputScript(script, psbtNetwork);
-          console.log(address, currentAddress);
           if (currentAddress === address) {
             toSignInputs.push({
               index,
