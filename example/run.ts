@@ -1,3 +1,4 @@
+import Signature from "bitcore-lib/lib/crypto/signature";
 import { AddressType, NetworkType } from "../src/constants";
 import { Wallet } from "../src/index";
 const run = async () => {
@@ -11,6 +12,9 @@ const run = async () => {
       {
         index: 0,
         publicKey: await wallet.getPublicKey(),
+        sighashTypes: [
+          Signature.SIGHASH_ANYONECANPAY | Signature.SIGHASH_SINGLE,
+        ],
       },
     ]);
     console.log(signedPsbtHex);

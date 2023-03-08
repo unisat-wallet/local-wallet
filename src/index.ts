@@ -10,6 +10,7 @@ import { SimpleKeyring } from "@unisat/bitcoin-simple-keyring";
 export interface ToSignInput {
   index: number;
   publicKey: string;
+  sighashTypes?: number[];
 }
 export class Wallet {
   keyring: SimpleKeyring;
